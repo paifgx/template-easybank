@@ -1,0 +1,204 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 3.8125rem 0 0;
+  font-family: 'Public Sans', sans-serif;
+  font-size: $fs-md;
+  font-weight: 300;
+  color: $c-grayishBlue;
+  line-height: 1.3;
+
+  @include breakpoint-up(lg) {
+	padding-top: 5rem;
+  }
+}
+
+
+// Default
+h1, h2, h3 {
+  font-weight: 300;
+  line-height: 1.15;
+  color: $c-darkBlue;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 2.3125rem;
+  margin-bottom: 1.5rem;
+
+  @include breakpoint-up(lg) {
+	font-size: $fs-xl;
+  }
+}
+
+h2 {
+  font-size: 1.875rem;
+  margin-bottom: 1.5625rem;
+
+  @include breakpoint-up(lg) {
+	font-size: 2.25rem;
+	margin-bottom: 2.25rem;
+  }
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 2.25rem;
+
+  @include breakpoint-up(lg) {
+	font-size: $fs-md;
+  }
+}
+
+
+a, a:visited, a:hover {
+  text-decoration: none;
+}
+
+
+// Spacing
+.container {
+  max-width: 69.375rem;
+  margin: 0 auto;
+}
+
+.m {
+  &-0 {
+	margin: 0;
+  }
+
+  &b-sm-1 {
+	@include breakpoint-down(md) {
+	  margin-bottom: 1.875rem;
+	}
+  }
+}
+
+.p {
+  &-t {
+	padding-top: $py;
+  }
+
+  &-b {
+	padding-bottom: $py;
+  }
+
+  &-l {
+	padding-left: $px;
+  }
+
+  &-r {
+	padding-right: $px;
+  }
+
+  &-x {
+	padding-left: $px;
+	padding-right: $px;
+  }
+
+  &-y {
+	padding-top: $py;
+	padding-bottom: $py;
+  }
+
+  &-all {
+	padding: $py $px;
+  }
+
+  @include breakpoint-up(lg) {
+	&-t {
+	  padding-top: $py-lg;
+	}
+
+	&-b {
+	  padding-bottom: $py-lg;
+	}
+
+	&-y {
+	  padding-top: $py-lg;
+	  padding-bottom: $py-lg;
+	}
+
+	&-all {
+	  padding: $py-lg $px;
+	}
+  }
+}
+
+
+// Flexbox
+.flex {
+  display: flex;
+
+  &-jc {
+	&-sb {
+	  justify-content: space-between;
+	}
+
+	&-c {
+	  justify-content: center;
+	}
+  }
+
+  &-ai {
+	&-c {
+	  align-items: center;
+	}
+  }
+}
+
+
+// Buttons
+button, .button {
+  position: relative;
+  display: inline-block;
+  padding: 0.875rem 2.1875rem;
+  background-image: $lg-limeToCyan;
+  border: 0;
+  border-radius: 50px;
+  cursor: pointer;
+  color: $c-white;
+  font-weight: 400;
+  font-size: $fs-sm;
+  transition: opacity 300ms ease-in-out;
+  overflow: hidden;
+
+  &::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(255, 255, 255, 0.25);
+	opacity: 0;
+	transition: opacity 150ms ease-in-out;
+  }
+
+  &:hover::before {
+	opacity: 1;
+  }
+}
+
+
+// Visibility
+.hide-for-mobile {
+  @include breakpoint-down(md) {
+	display: none;
+  }
+}
+
+.hide-for-desktop {
+  @include breakpoint-up(lg) {
+	display: none;
+  }
+}

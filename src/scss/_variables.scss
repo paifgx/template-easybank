@@ -1,0 +1,22 @@
+// Colors
+$c-darkBlue: hsl(233, 26%, 24%);
+$c-limeGreen: hsl(136, 65%, 51%);
+$c-brightCyan: hsl(192, 70%, 51%);
+$c-grayishBlue: hsl(233, 8%, 62%);
+$c-lightGrayishBlue: hsl(220, 16%, 96%);
+$c-veryLightGray: hsl(0, 0%, 98%);
+$c-white: hsl(0, 0%, 100%);
+
+// Linear Gradient
+$lg-limeToCyan: linear-gradient(to right, $c-limeGreen, $c-brightCyan);
+$lg-blueToTransparent: linear-gradient(to bottom, $c-darkBlue, transparent);
+
+// Font Sizes
+$fs-sm: 0.875rem; // 14px
+$fs-md: 1.125rem; // 18px
+$fs-xl: 3.25rem; // 52px
+
+// Paddings
+$py: 4.375rem;
+$py-lg: 6rem;
+$px: 1.5rem;
